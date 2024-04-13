@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<VariablesExchangeFile>
+	<fileHeader company="Schneider Automation" product="Control Expert V15.2 - 220711" dateTime="date_and_time#2024-4-12-6:27:8" content="Variable source file" DTDVersion="41"></fileHeader>
+	<contentHeader name="Project" version="0.0.000"></contentHeader>
+	<privateLocalVariables>
+		<variables name="v_setpt" typeName="INT"></variables>
+		<variables name="i_blue_pb3_no" typeName="INT"></variables>
+		<variables name="i_yellow_pb2_no" typeName="INT"></variables>
+		<variables name="i_green_pb1_no" typeName="INT"></variables>
+		<variables name="i_red_pb0_nc" typeName="INT"></variables>
+		<variables name="i_tog0" typeName="INT"></variables>
+		<variables name="i_tog1" typeName="INT"></variables>
+		<variables name="o_blue_pb3_light" typeName="INT"></variables>
+		<variables name="o_yellow_pb2_light" typeName="INT"></variables>
+		<variables name="o_green_pb1_light" typeName="INT"></variables>
+		<variables name="o_red_pb0_light" typeName="INT"></variables>
+		<variables name="v_inc_setpt" typeName="INT"></variables>
+		<variables name="v_dec_setpt" typeName="INT"></variables>
+		<variables name="v_setpt_at_max" typeName="INT"></variables>
+		<variables name="v_setpt_at_min" typeName="INT"></variables>
+	</privateLocalVariables>
+</VariablesExchangeFile>
