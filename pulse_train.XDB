@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<FBExchangeFile>
+	<fileHeader company="Schneider Automation" product="Control Expert V15.2 - 220711" dateTime="date_and_time#2024-4-12-6:43:58" content="Function Block source file" DTDVersion="41"></fileHeader>
+	<contentHeader name="Project" version="0.0.1" dateTime="date_and_time#2024-4-8-17:37:49"></contentHeader>
+	<FBSource nameOfFBType="pulse_train" version="0.03" dateTime="dt#2024-04-08-16:40:01">
+		<attribute name="TypeCodeCheckSumString" value="1E8C"></attribute>
+		<attribute name="TypeSignatureCheckSumString" value="F0B8"></attribute>
+		<attribute name="UseNewTplSignAlgo" value="TRUE"></attribute>
+		<inputParameters>
+			<variables name="pulse_freq" typeName="INT">
+				<attribute name="PositionPin" value="1"></attribute>
+			</variables>
+		</inputParameters>
+		<outputParameters>
+			<variables name="p_on" typeName="EBOOL">
+				<attribute name="PositionPin" value="1"></attribute>
+			</variables>
+		</outputParameters>
+		<privateLocalVariables>
+			<variables name="TON_1" typeName="TON"></variables>
+			<variables name="TON_2" typeName="TON"></variables>
+			<variables name="TON_3" typeName="TON"></variables>
+			<variables name="TP_1" typeName="TP"></variables>
+			<variables name="TP_2" typeName="TP"></variables>
+			<variables name="p_off" typeName="EBOOL"></variables>
+			<variables name="pulse_period_ms" typeName="TIME"></variables>
+		</privateLocalVariables>
+		<FBProgram name="pulse_train">
+			<LDSource nbColumns="11">
+				<networkLD>
+					<typeLine>
+						<emptyLine nbRows="1"></emptyLine>
+					</typeLine>
+					<typeLine>
+						<emptyCell nbCells="4"></emptyCell>
+						<FFBBlock instanceName=".1" typeName="DIV_INT" additionnalPinNumber="0" enEnO="true" width="10" height="4">
+							<objPosition posX="4" posY="1"></objPosition>
+							<descriptionFFB execAfter="">
+								<inputVariable invertedPin="false" formalParameter="EN"></inputVariable>
+								<inputVariable invertedPin="false" formalParameter="IN1" effectiveParameter="1000"></inputVariable>
+								<inputVariable invertedPin="false" formalParameter="IN2" effectiveParameter="pulse_freq "></inputVariable>
+								<outputVariable invertedPin="false" formalParameter="ENO"></outputVariable>
+								<outputVariable invertedPin="false" formalParameter="OUT"></outputVariable>
+							</descriptionFFB>
+						</FFBBlock>
+						<FFBBlock instanceName=".2" typeName="INT_TO_TIME" additionnalPinNumber="0" enEnO="true" width="14" height="3">
+							<objPosition posX="6" posY="1"></objPosition>
+							<descriptionFFB execAfter="">
+								<inputVariable invertedPin="false" formalParameter="EN"></inputVariable>
+								<inputVariable invertedPin="false" formalParameter="IN"></inputVariable>
+								<outputVariable invertedPin="false" formalParameter="ENO"></outputVariable>
+								<outputVariable invertedPin="false" formalParameter="OUT" effectiveParameter="pulse_period_ms"></outputVariable>
+							</descriptionFFB>
+						</FFBBlock>
+						<emptyCell nbCells="3"></emptyCell>
+					</typeLine>
+					<typeLine>
+						<HLink nbCells="4"></HLink>
+						<emptyCell nbCells="7"></emptyCell>
+					</typeLine>
+					<typeLine>
+						<emptyLine nbRows="1"></emptyLine>
+					</typeLine>
+					<typeLine>
+						<emptyCell nbCells="2"></emptyCell>
+						<FFBBlock instanceName="TP_1" typeName="TP" additionnalPinNumber="0" enEnO="true" width="10" height="4">
+							<objPosition posX="2" posY="4"></objPosition>
+							<descriptionFFB execAfter="">
+								<inputVariable invertedPin="false" formalParameter="EN"></inputVariable>
+								<inputVariable invertedPin="false" formalParameter="IN"></inputVariable>
+								<inputVariable invertedPin="false" formalParameter="PT" effectiveParameter="pulse_period_ms"></inputVariable>
+								<outputVariable invertedPin="false" formalParameter="ENO"></outputVariable>
+								<outputVariable invertedPin="false" formalParameter="Q" effectiveParameter="p_on"></outputVariable>
+								<outputVariable invertedPin="false" formalParameter="ET"></outputVariable>
+							</descriptionFFB>
+						</FFBBlock>
+						<emptyCell nbCells="7"></emptyCell>
+					</typeLine>
+					<typeLine>
+						<HLink nbCells="2"></HLink>
+						<emptyCell nbCells="9"></emptyCell>
+					</typeLine>
+					<typeLine>
+						<HLink nbCells="1"></HLink>
+						<contact typeContact="closedContact" contactVariableName="p_off"></contact>
+						<emptyCell nbCells="9"></emptyCell>
+					</typeLine>
+					<typeLine>
+						<emptyLine nbRows="2"></emptyLine>
+					</typeLine>
+					<typeLine>
+						<emptyCell nbCells="2"></emptyCell>
+						<FFBBlock instanceName="TP_2" typeName="TP" additionnalPinNumber="0" enEnO="true" width="10" height="4">
+							<objPosition posX="2" posY="9"></objPosition>
+							<descriptionFFB execAfter="">
+								<inputVariable invertedPin="false" formalParameter="EN"></inputVariable>
+								<inputVariable invertedPin="false" formalParameter="IN"></inputVariable>
+								<inputVariable invertedPin="false" formalParameter="PT" effectiveParameter="pulse_period_ms"></inputVariable>
+								<outputVariable invertedPin="false" formalParameter="ENO"></outputVariable>
+								<outputVariable invertedPin="false" formalParameter="Q" effectiveParameter="p_off"></outputVariable>
+								<outputVariable invertedPin="false" formalParameter="ET"></outputVariable>
+							</descriptionFFB>
+						</FFBBlock>
+						<emptyCell nbCells="7"></emptyCell>
+					</typeLine>
+					<typeLine>
+						<HLink nbCells="2"></HLink>
+						<emptyCell nbCells="9"></emptyCell>
+					</typeLine>
+					<typeLine>
+						<HLink nbCells="1"></HLink>
+						<contact typeContact="closedContact" contactVariableName="p_on"></contact>
+						<emptyCell nbCells="9"></emptyCell>
+					</typeLine>
+					<typeLine>
+						<emptyLine nbRows="88"></emptyLine>
+					</typeLine>
+				</networkLD>
+			</LDSource>
+		</FBProgram>
+	</FBSource>
+</FBExchangeFile>
